@@ -10,12 +10,11 @@ export default function Home() {
   const dark = useStore((state) => state.dark);
   return (
     <main
-      className={`mx-auto w-full max-w-[1440px] min-w-[250px] min-h-screen p-4 md:p-4`}
-      style={{
-        background: dark
+      className={`mx-auto w-full max-w-[1440px] min-w-[250px] min-h-screen p-4 md:p-4 ${
+        dark
           ? "bg-[image:var(--dark-gradient)]"
-          : "bg-[image:var(--light-gradient)]",
-      }}
+          : "bg-[image:var(--light-gradient)]"
+      }`}
     >
       <header
         className={`flex p-2.5 h-[60px] justify-between items-center rounded-[12px] border-[2px] ${
