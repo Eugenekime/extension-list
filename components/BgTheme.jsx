@@ -1,4 +1,4 @@
-import { useStore } from "../../components/store";
+import { useStore } from "./store";
 
 export default function BgTheme({ children }) {
   const dark = useStore((state) => state.dark);
