@@ -10,9 +10,7 @@ export default function Home() {
   const dark = useStore((state) => state.dark);
   return (
     <main
-      className={`mx-auto w-full max-w-[1440px] min-w-[250px] min-h-screen p-4 md:p-4 ${
-        dark ? "bg-[var(--dark-gradient)]" : "bg-[var(--neutral-200)]"
-      }`}
+      className={`mx-auto w-full max-w-[1440px] min-w-[250px] min-h-screen p-4 md:p-4 `}
     >
       <header
         className={`flex p-2.5 h-[60px] justify-between items-center rounded-[12px] border-[2px] ${
