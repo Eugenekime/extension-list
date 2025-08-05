@@ -10,7 +10,7 @@ export default function Home() {
   const dark = useStore((state) => state.dark);
   return (
     <main
-      className={`mx-auto w-full max-w-[1440px] min-w-[250px] min-h-screen p-4 md:p-4 ${
+      className={`max-w-[1440px] min-w-[250px] min-h-screen p-4 md:p-4 ${
         dark
           ? "bg-[image:var(--dark-gradient)]"
           : "bg-[image:var(--light-gradient)]"
