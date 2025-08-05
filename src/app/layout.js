@@ -19,9 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${notoSans.variable} bg-[var(--neutral-200)] dark:bg-[var(--dark-gradient)]`}
-      >
+      <body className={`${notoSans.variable}  `}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>

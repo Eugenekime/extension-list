@@ -1,30 +1,23 @@
 "use client";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+
+import { useEffect } from "react";
 import Image from "next/image";
+import { useStore } from "../store";
 
 export default function ToggleTheme() {
-  const { theme, setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
-
-  if (!mounted) return null;
-
-  const isDark = resolvedTheme === "dark";
-
-  const toggleTheme = () => {
-    setTheme(isDark ? "light" : "dark");
-  };
+  const dark = useStore((state) => state.dark);
+  const switchMode = useStore((state) => state.switchMode);
 
   return (
     <button
-      onClick={toggleTheme}
-      className="bg-[var(--neutral-100)] dark:bg-[var(--neutral-700)] p-1 flex justify-center rounded-[12px] w-[45px] h-[45px] focus:outline-none focus:ring-2 focus:border-2 focus:ring-[var(--red-500)] focus:border-white"
+      onClick={switchMode}
+      className={` dark: p-1 flex justify-center rounded-[12px] w-[45px] h-[45px] focus:outline-none focus:ring-2 focus:border-2 focus:ring-[var(--red-500)] focus:border-white ${
+        dark ? "bg-[var(--neutral-700)]" : "bg-[var(--neutral-100)]"
+      }`}
     >
       <Image
-        src={isDark ? "/icon-sun.svg" : "/icon-moon.svg"}
-        alt={isDark ? "sun icon" : "moon icon"}
+        src={dark ? "/icon-sun.svg" : "/icon-moon.svg"}
+        alt={dark ? "sun icon" : "moon icon"}
         width={20}
         height={20}
       />
