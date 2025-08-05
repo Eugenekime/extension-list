@@ -13,8 +13,8 @@ export default function Home() {
       className={`mx-auto w-full max-w-[1440px] min-w-[250px] min-h-screen p-4 md:p-4`}
       style={{
         background: dark
-          ? "bg-[var(--dark-gradient)]"
-          : "bg-[var(--light-gradient)]",
+          ? "bg-[image:var(--dark-gradient)]"
+          : "bg-[image:var(--light-gradient)]",
       }}
     >
       <header
