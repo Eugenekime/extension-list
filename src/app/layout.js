@@ -1,6 +1,7 @@
 import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import BgTheme from "../../components/BgTheme";
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -19,9 +20,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${notoSans.variable} mx-auto w-full`}>
+      <body className={`${notoSans.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          <BgTheme>{children}</BgTheme>
         </ThemeProvider>
       </body>
     </html>
